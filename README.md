@@ -3,26 +3,60 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The purpose of this analysis was to build a model that indentifies high risk loans from non-high risk loans. The goal was to identify high risk borrowers based on variables such loan amount, interest rates, borrower income, debt to income ratio, number of accounts, total debt and derogatory marks. 
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+**Data info:**
+* 77,536 Total Loan Records
+* Target Variable: 'Loan Status'
+    * Healthy loan (0):  75,036 total
+    * High Risk Loan (1): 2,500 total
+
+Maching Learning Pipeline:
+1. Import CSV file
+2. Used train_test_split() from sklearn.model_selection to training and testing sets
+3. Used LogisticRegression() to create the model
+4. Trained the model using model.fit(X_train, y_train)
+5. Generated predictions using model.predict(X_test)
+6. Generated a confusion matrix and printed the classification report
+
+
 
 ## Results
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+**Machine Learning Model 1:**
+    * Accuracy: 0.99
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+**Healthy-loan (0)**
+
+    * Precision: 1.00
+
+    * Recall: 0.99
+
+    * F1-score: 1.00
+
+    * Support: 18,765
+
+**High-risk-loan (1)**
+
+    * Precision: 0.84
+
+    * Recall: 0.94
+
+    * F1-score: 0.89
+
+    * Support: 619
+
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+- **Best performer:**  
+  I tested Logistic Regression and it came out on top—perfect F1 (1.00) for healthy loans and a strong 0.89 for high-risk loans.
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+- **Why it performs best:**  
+  It flags 94% of real high-risk loans while almost never mislabeling healthy ones, giving us a solid balance between catching true risks and keeping false positives low.
 
-If you do not recommend any of the models, please justify your reasoning.
+- **Dependence on the problem:**  
+  Since overlooking a high-risk loan is more costly than mistakenly flagging a safe one, I focused on making sure the model catches as many high-risk loans as possible (prioritizing sensitivity) rather than aiming for perfect precision.
+
+- **Recommendation:**  
+  My recommendation is to use this Logistic Regression as-is. 
