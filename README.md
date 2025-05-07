@@ -60,3 +60,6 @@ Maching Learning Pipeline:
 
 - **Recommendation:**  
   My recommendation is to use this Logistic Regression as-is. 
+
+  ## Resources
+  I used examples from class to write the code and used Chatgpt for optimizing text and supporting my learning
