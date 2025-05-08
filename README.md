@@ -50,16 +50,16 @@ Maching Learning Pipeline:
 ## Summary
 
 - **Best performer:**  
-  I tested Logistic Regression and it came out on top—perfect F1 (1.00) for healthy loans and a strong 0.89 for high-risk loans.
+  I tested Logistic Regression and it performed very well.  It had a perfect F1 (1.00) for healthy loans and a strong 0.89 for high-risk loans.
 
 - **Why it performs best:**  
-  It flags 94% of real high-risk loans while almost never mislabeling healthy ones, giving us a solid balance between catching true risks and keeping false positives low.
+  It flags 94% of real high risk loans while almost never mislabeling healthy ones, giving it a solid balance between catching true risks and keeping false positives low.
 
 - **Dependence on the problem:**  
-  Since overlooking a high-risk loan is more costly than mistakenly flagging a safe one, I focused on making sure the model catches as many high-risk loans as possible (prioritizing sensitivity) rather than aiming for perfect precision.
+  Since overlooking a high risk loan is more costly than mistakenly flagging a safe one, I focused on making sure the model catches as many high risk loans as possible (prioritizing sensitivity) rather than aiming for perfect precision.
 
 - **Recommendation:**  
-  My recommendation is to use this Logistic Regression as-is. 
+  My recommendation is to use this Logistic Regression model. 
 
   ## Resources
   I used examples from class to write the code and used Chatgpt for optimizing text and supporting my learning
